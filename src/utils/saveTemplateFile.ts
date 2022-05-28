@@ -9,6 +9,6 @@ export const saveTemplateFile = async () => {
   setTimeout(() => {
     link.remove()
     window.URL.revokeObjectURL(blobUrl)
-    link = null
+    link = null as unknown as HTMLAnchorElement
   }, 0)
 }
