@@ -50,7 +50,7 @@ export const DocForm = () => {
         <Divider />
         {'Оплата по договору осуществляется:'}
         <Form.Item
-          label={'Государственная регистрация'}
+          label={'Гос. регистрация'}
           style={{ marginTop: 10, width: 500 }}
         >
           <Switch
