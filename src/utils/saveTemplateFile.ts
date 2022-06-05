@@ -1,5 +1,7 @@
 export const saveTemplateFile = async () => {
-  const request = await fetch('/files/client-documents/test.docx')
+  const request = await fetch(
+    '/files/client-documents/02.11.2021г. ДДУ (рассрочка).docx'
+  )
   const blobUrl = URL.createObjectURL(await request.blob())
   let link = document.createElement('a')
   link.download = 'Шаблон.docx'

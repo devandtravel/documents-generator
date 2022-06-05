@@ -1,7 +1,10 @@
 import { TemplateData, TemplateHandler } from 'easy-template-x'
 
 export const saveResultFile = async (templateContent: TemplateData) => {
-  const request = await fetch('/files/client-documents/test.docx')
+  const request = await fetch(
+    '/files/client-documents/02.11.2021г. ДДУ (рассрочка).docx'
+  )
+  // const request = await fetch('/files/client-documents/test.docx')
   const blobUrl = URL.createObjectURL(
     await new TemplateHandler().process(await request.blob(), templateContent)
   )

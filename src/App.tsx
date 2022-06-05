@@ -1,3 +1,3 @@
-import { DocForm } from './components/Form'
+import { DocForm } from './components/DocForm'
 
 export const App = () => <DocForm />

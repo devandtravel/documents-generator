@@ -2,10 +2,11 @@ import { MimeType } from 'easy-template-x'
 
 export const inputTestData = {
   editableContent: {
-    text: 'Обычный текст',
-    styledText: 'Текст с форматированием',
-    column1Title: 'Столбец 1',
-    column2Title: 'Столбец 2'
+    'Номер договора': '0123456789',
+    contractOwner: 'Благонравовой Анны Валерьевны',
+    attorneyDate: '23.03.2021',
+    notary: 'Хамидуллиной Айгуль Амировной',
+    attorneyNumber: '26/214-н/77-2021-1-772'
   },
   staticContent: {
     repeating: [

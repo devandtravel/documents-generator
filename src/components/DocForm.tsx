@@ -9,14 +9,17 @@ import { saveTemplateFile } from '../utils/saveTemplateFile'
 export const DocForm = () => {
   const [form] = Form.useForm()
   const { editableContent, staticContent } = inputTestData
-  const [visibleBlue, setVisibleBlue] = useState(true)
-  const [visibleGreen, setVisibleGreen] = useState(true)
+  const [visiblePaymentSimple, setVisiblePaymentSimple] = useState(true)
+  const [visiblePaymentCredit, setVisiblePaymentCredit] = useState(true)
+  const [visiblePaymentSber, setVisiblePaymentSber] = useState(true)
 
   const onFinish = async (values: any) => {
     const templateContent = {
       ...values,
       ...staticContent,
-      visibility: [{ visibleBlue: visibleBlue }, { visibleGreen: visibleGreen }]
+      visiblePaymentSimple: visiblePaymentSimple,
+      visiblePaymentCredit: visiblePaymentCredit,
+      visiblePaymentSber: visiblePaymentSber
     }
     try {
       saveResultFile(templateContent)
@@ -45,19 +48,32 @@ export const DocForm = () => {
         ))}
 
         <Divider />
-        <Form.Item label={'visibleBlue'} style={{ width: 500 }}>
+        {'Оплата по договору осуществляется:'}
+        <Form.Item
+          label={'Государственная регистрация'}
+          style={{ marginTop: 10, width: 500 }}
+        >
           <Switch
             style={{ alignSelf: 'flex-end' }}
-            onChange={() => setVisibleBlue(!visibleBlue)}
+            onChange={() => setVisiblePaymentSimple(!visiblePaymentSimple)}
             checkedChildren="ВКЛ"
             unCheckedChildren="ВЫКЛ"
             defaultChecked
           />
         </Form.Item>
-        <Form.Item label={'visibleGreen'} style={{ width: 500 }}>
+        <Form.Item label={'Аккредитивная форма'} style={{ width: 500 }}>
           <Switch
             style={{ alignSelf: 'flex-end' }}
-            onChange={() => setVisibleGreen(!visibleBlue)}
+            onChange={() => setVisiblePaymentCredit(!visiblePaymentCredit)}
+            checkedChildren="ВКЛ"
+            unCheckedChildren="ВЫКЛ"
+            defaultChecked
+          />
+        </Form.Item>
+        <Form.Item label={'Сервис от Сбера'} style={{ width: 500 }}>
+          <Switch
+            style={{ alignSelf: 'flex-end' }}
+            onChange={() => setVisiblePaymentSber(!visiblePaymentSber)}
             checkedChildren="ВКЛ"
             unCheckedChildren="ВЫКЛ"
             defaultChecked

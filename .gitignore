@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Other
-.~lock.test.docx#
+.~lock*
