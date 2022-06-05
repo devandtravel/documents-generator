@@ -3,7 +3,7 @@ import { MimeType } from 'easy-template-x'
 export const inputTestData = {
   editableContent: {
     'Номер договора': '0123456789',
-    contractOwner: 'Благонравовой Анны Валерьевны',
+    contractOwner: 'Благонравова Анна Валерьевна',
     attorneyDate: '23.03.2021',
     notary: 'Хамидуллиной Айгуль Амировной',
     attorneyNumber: '26/214-н/77-2021-1-772'

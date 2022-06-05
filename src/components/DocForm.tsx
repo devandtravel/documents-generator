@@ -5,6 +5,9 @@ import { inputTestData } from '../data/inputTestData'
 import { useState } from 'react'
 import ReactJson from 'react-json-view'
 import { saveTemplateFile } from '../utils/saveTemplateFile'
+import RussianNouns from 'russian-nouns-js'
+
+const rne = new RussianNouns.Engine()
 
 export const DocForm = () => {
   const [form] = Form.useForm()
@@ -16,6 +19,10 @@ export const DocForm = () => {
   const onFinish = async (values: any) => {
     const templateContent = {
       ...values,
+      contractOwner: rne.decline(
+        { text: values.contractOwner, gender: 'женский' },
+        'родительный'
+      ),
       ...staticContent,
       visiblePaymentSimple: visiblePaymentSimple,
       visiblePaymentCredit: visiblePaymentCredit,
