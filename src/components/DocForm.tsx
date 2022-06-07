@@ -101,7 +101,7 @@ export const DocForm = () => {
           </Button>
         </Form.Item>
       </Form>
-      <ReactJson
+      {/* <ReactJson
         collapsed={2}
         src={inputTestData}
         name={`ДАННЫЕ ДЛЯ ЗАПОЛНЕНИЯ ШАБЛОНА`}
@@ -113,7 +113,7 @@ export const DocForm = () => {
         style={{ padding: '10px', marginLeft: '50px' }}
         collapseStringsAfterLength={80}
         enableClipboard={false}
-      />
+      /> */}
     </div>
   )
 }
