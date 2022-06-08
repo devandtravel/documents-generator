@@ -14,14 +14,6 @@ export const inputTestData = {
       { repeatingText: 'Повторяющийся текст' },
       { repeatingText: 'Повторяющийся текст' }
     ],
-    table: [
-      { column1Text: 'Текст 1 в первой колонке', column2Text: 1 },
-      { column1Text: 'Текст 2 в первой колонке', column2Text: 2 },
-      { column1Text: 'Текст 3 в первой колонке', column2Text: 3 },
-      { column1Text: 'Текст 4 в первой колонке', column2Text: 4 },
-      { column1Text: 'Текст 5 в первой колонке', column2Text: 5 },
-      { column1Text: 'Текст 6 в первой колонке', column2Text: 6 }
-    ],
     clients: [
       {
         clientTitle: 'Васильев Василий Васильевич',
@@ -56,34 +48,41 @@ export const inputTestData = {
     ],
     objectTable: [
       {
-        clientTitle: 'Васильев Василий Васильевич',
-        birthYear: 1900,
-        birthLocation: 'Москва',
-        passportNumber: '9999999',
-        passportIssuer: 'УФМС № 9',
-        passportIssuerCode: '999-999',
-        clientAdress: 'Васильевская, 9',
-        clientSNILS: '9999999999999999'
+        objectPropertyName: 'Квартал',
+        objectPropertyValue: '1'
+      },
+      { objectPropertyName: 'Номер корпуса', objectPropertyValue: 'В10' },
+      { objectPropertyName: 'Номер секции', objectPropertyValue: '8' },
+      { objectPropertyName: 'Этаж', objectPropertyValue: '22' },
+      {
+        objectPropertyName:
+          'Номер квартиры на площадке (считая слева направо по часовой стрелке от выхода из лифтового холла)',
+        objectPropertyValue: '285'
+      },
+      { objectPropertyName: 'Назначение', objectPropertyValue: 'жилое' },
+      { objectPropertyName: 'Количество комнат', objectPropertyValue: '4' },
+      { objectPropertyName: 'Условный номер', objectPropertyValue: '15165' },
+      {
+        objectPropertyName: 'Проектная общая площадь, кв.м, в т.ч.:',
+        objectPropertyValue: '118'
       },
       {
-        clientTitle: 'Петров Петр Петрович',
-        birthYear: 1910,
-        birthLocation: 'Рязань',
-        passportNumber: '8888888',
-        passportIssuer: 'УФМС № 8',
-        passportIssuerCode: '888-888',
-        clientAdress: 'Петровская, 8',
-        clientSNILS: '8888888888888888'
+        objectPropertyName: '         - площадь жилых помещений, кв.м;',
+        objectPropertyValue: '85'
       },
       {
-        clientTitle: 'Иванов Иван Иванович',
-        birthYear: 1920,
-        birthLocation: 'Иваново',
-        passportNumber: '7777777',
-        passportIssuer: 'УФМС № 7',
-        passportIssuerCode: '777-777',
-        clientAdress: 'Ивановская, 7',
-        clientSNILS: '7777777777777777'
+        objectPropertyName:
+          '         - площадь помещений вспомогательного использования, кв.м;',
+        objectPropertyValue: '15'
+      },
+      {
+        objectPropertyName:
+          '         - площадь летних помещений (лоджий, балконов, террас), кв.м.',
+        objectPropertyValue: '18'
+      },
+      {
+        objectPropertyName: 'Проектная общая приведенная площадь, кв.м',
+        objectPropertyValue: '118'
       }
     ],
     image: {
