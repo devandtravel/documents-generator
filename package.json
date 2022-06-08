@@ -11,6 +11,7 @@
   "dependencies": {
     "antd": "^4.20.6",
     "easy-template-x": "^2.1.0",
+    "petrovich": "^0.2.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-json-view": "^1.21.3",

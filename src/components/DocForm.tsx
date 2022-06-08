@@ -5,9 +5,7 @@ import { inputTestData } from '../data/inputTestData'
 import { useState } from 'react'
 import ReactJson from 'react-json-view'
 import { saveTemplateFile } from '../utils/saveTemplateFile'
-import RussianNouns from 'russian-nouns-js'
-
-const rne = new RussianNouns.Engine()
+import { declinePerson } from '../utils/declinePerson'
 
 export const DocForm = () => {
   const [form] = Form.useForm()
@@ -19,11 +17,16 @@ export const DocForm = () => {
   const onFinish = async (values: any) => {
     const templateContent = {
       ...values,
-      contractOwner: rne.decline(
-        { text: values.contractOwner, gender: 'женский' },
-        'родительный'
-      ),
+      contractOwner: declinePerson(values.contractOwner),
+      notary: declinePerson(values.notary),
+      i: staticContent.clients.length > 1 ? 'и' : '',
       ...staticContent,
+      clients: [
+        ...staticContent.clients.map((client) => ({
+          ...client,
+          clientTitle: declinePerson(client.clientTitle)
+        }))
+      ],
       visiblePaymentSimple: visiblePaymentSimple,
       visiblePaymentCredit: visiblePaymentCredit,
       visiblePaymentSber: visiblePaymentSber
@@ -55,7 +58,7 @@ export const DocForm = () => {
         ))}
 
         <Divider />
-        {'Оплата по договору осуществляется:'}
+        {'Оплата по договору'}
         <Form.Item
           label={'Гос. регистрация'}
           style={{ marginTop: 10, width: 500 }}
