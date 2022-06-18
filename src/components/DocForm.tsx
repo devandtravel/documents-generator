@@ -2,9 +2,9 @@ import { Form, Button, Switch, Divider } from 'antd'
 import { TextInput } from './TextInput'
 import { saveResultFile } from '../utils/saveResultFile'
 import { inputTestData } from '../data/inputTestData'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ReactJson from 'react-json-view'
-import { saveTemplateFile } from '../utils/saveTemplateFile'
+import { getTemplateURL } from '../utils/getTemplateURL'
 import { declinePerson } from '../utils/declinePerson'
 
 export const DocForm = () => {
@@ -13,6 +13,15 @@ export const DocForm = () => {
   const [visiblePaymentSimple, setVisiblePaymentSimple] = useState(true)
   const [visiblePaymentCredit, setVisiblePaymentCredit] = useState(true)
   const [visiblePaymentSber, setVisiblePaymentSber] = useState(true)
+  const [templateURL, setTemplateURL] = useState<string>()
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const templateURL = await getTemplateURL()
+      setTemplateURL(templateURL)
+    }
+    fetchData()
+  }, [])
 
   const onFinish = async (values: any) => {
     const templateContent = {
@@ -93,7 +102,7 @@ export const DocForm = () => {
         <Divider />
         <Form.Item
           label={
-            <Button type="default" onClick={saveTemplateFile}>
+            <Button type="link" href={templateURL} download="Шаблон.docx">
               Шаблон
             </Button>
           }
@@ -104,8 +113,8 @@ export const DocForm = () => {
           </Button>
         </Form.Item>
       </Form>
-      {/* <ReactJson
-        collapsed={2}
+      <ReactJson
+        collapsed={3}
         src={inputTestData}
         name={`ДАННЫЕ ДЛЯ ЗАПОЛНЕНИЯ ШАБЛОНА`}
         displayDataTypes={false}
@@ -116,7 +125,7 @@ export const DocForm = () => {
         style={{ padding: '10px', marginLeft: '50px' }}
         collapseStringsAfterLength={80}
         enableClipboard={false}
-      /> */}
+      />
     </div>
   )
 }

@@ -84,15 +84,15 @@ export const inputTestData = {
         objectPropertyName: 'Проектная общая приведенная площадь, кв.м',
         objectPropertyValue: '118'
       }
-    ],
-    image: {
-      _type: 'image',
-      source: await fetch(
-        'https://github.com/alonrbar/easy-template-x/raw/master/docs/assets/image-plugin-out.png?raw=true'
-      ).then((r) => r.blob()),
-      format: MimeType.Png,
-      width: 200,
-      height: 200
-    }
+    ]
+    // image: {
+    //   _type: 'image',
+    //   source: await fetch(
+    //     'https://github.com/alonrbar/easy-template-x/raw/master/docs/assets/image-plugin-out.png?raw=true'
+    //   ).then((r) => r.blob()),
+    //   format: MimeType.Png,
+    //   width: 200,
+    //   height: 200
+    // }
   }
 }
